@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //for main activity
+    <string name="app_name">SBASE</string>
+    <string name="loginBanner">Account Login</string>
+    <string name="login">Login</string>
+    <string name="reset">Forgot Password</string>
+    <string name="usernameHint">username</string>
+    <string name="passwordHint">password</string>
+    //for reset activity
+    <string name="resetBanner">Account Recovery</string>
+    <string name="fieldUsername">Username:</string>
+    <string name="fieldHint">New Hint:</string>
+    <string name="fieldPassword">New Password:</string>
+    <string name="wordConfirm">confirm</string>
+    <string name="wordCurHint">Enter current hint</string>
+    <string name="wordPassword">password</string>
+    <string name="recover">reset</string>
+    //for changecred activity
+    <string name="changeBanner">Change Security Credentials</string>
+    <string name="fieldCurPass">current password:</string>
+    <string name="change">proceed</string>
+    //for register activity
+    <string name="regBanner">Set Personal Credentials</string>
+    <string name="register">register</string>
+    <string name="yPass">Account Password:</string>
+    <string name="yHint">Account Hint:</string>
+
+
+    <!-- for the show results fragment-->
+    <string name="hdr">Subject</string>
+    <string name="hdr1">Class Score</string>
+    <string name="hdr2">Exam Score</string>
+    <string name="hdr3">Totalmarks</string>
+
+    <!-- for the show graph fragment-->
+    <string name="graphBanner">TransGraph</string>
+
+    <!-- actionbar toggle-->
+    <string name="openDrawer">open</string>
+    <string name="closeDrawer">close</string>
+
+
+</resources>

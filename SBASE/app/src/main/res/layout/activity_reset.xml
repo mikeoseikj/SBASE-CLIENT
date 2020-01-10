@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background_image">
+
+    <!--Banner-->
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/resetBanner"
+        android:textSize="23dp"
+        android:textColor="@color/bannerColor"
+        android:textAlignment="center"
+        android:textAllCaps="true"/>
+
+    <!--show the word "username:" above the input field in the Current Account section-->
+    <TextView
+        android:text="@string/fieldUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:layout_marginLeft="5dp"
+        android:textStyle="italic"/>
+
+    <!--provide username-->
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/loginTintColor"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textCursorDrawable="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ." />
+
+    <!--provide current hint-->
+    <EditText
+        android:id="@+id/cur_hint"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:hint="@string/wordCurHint"
+        android:backgroundTint="@color/loginTintColor"
+        android:textColorHint="@color/loginTextColor"
+        android:fontFamily="monospace"
+        android:textColor="@color/loginTextColor"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textCursorDrawable="@color/bannerColor"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+
+    <!--Beginning of New Account Details section //show text "New Password"-->
+    <TextView
+        android:text="@string/fieldPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:layout_marginLeft="5dp"
+        android:textStyle="italic"/>
+
+    <!--enter password section-->
+    <EditText
+        android:id="@+id/password1"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/loginTintColor"
+        android:textColor="@color/loginTextColor"
+        android:inputType="textPassword"
+        android:layout_gravity="center_horizontal"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="20dp"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+
+    <!--confirm-->
+    <EditText
+        android:id="@+id/password2"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:hint="@string/wordConfirm"
+        android:backgroundTint="@color/loginTintColor"
+        android:textColorHint="@color/textHintColor"
+        android:textColor="@color/loginTextColor"
+        android:inputType="textPassword"
+        android:layout_gravity="center_horizontal"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+
+    <!--show text "New Hint" -->
+    <TextView
+        android:text="@string/fieldHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:textStyle="italic"/>
+
+    <!--enter hint section-->
+    <EditText
+        android:id="@+id/hint1"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/loginTintColor"
+        android:textColor="@color/loginTextColor"
+        android:layout_gravity="center_horizontal"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="20dp"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+
+    <!--confirm-->
+    <EditText
+        android:id="@+id/hint2"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:hint="@string/wordConfirm"
+        android:backgroundTint="@color/loginTintColor"
+        android:textColorHint="@color/textHintColor"
+        android:textColor="@color/loginTextColor"
+        android:layout_gravity="center_horizontal"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@color/bannerColor"
+        android:fontFamily="monospace"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+
+    <!--recover button-->
+    <Button
+        android:id="@+id/recover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/bannerColor"
+        android:text="@string/recover"
+        android:textColor="@android:color/white"
+        android:fontFamily="monospace"
+        android:layout_gravity="right"/>
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@mipmap/background_image"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Banner-->
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textColor="@color/bannerColor"
+        android:textSize="23dp"
+        android:text="@string/regBanner"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="italic"/>
+
+    <!--Account registration after first account login //show text "New Password"-->
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/bannerColor"
+        android:text="@string/yPass"
+        android:fontFamily="monospace"
+        android:textStyle="italic"
+        android:layout_marginLeft="5dp"/>
+
+    <!--enter password section-->
+    <EditText
+        android:id="@+id/password1"
+        android:layout_height="40dp"
+        android:layout_width="320dp"
+        android:textColor="@color/loginTextColor"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@color/bannerColor"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/loginTintColor"
+        android:cursorVisible="true"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="monospace"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+
+    <!--Confirm-->
+    <EditText
+        android:id="@+id/password2"
+        android:layout_height="40dp"
+        android:layout_width="320dp"
+        android:textColor="@color/loginTextColor"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@color/bannerColor"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/loginTintColor"
+        android:cursorVisible="true"
+        android:textColorHint="@color/textHintColor"
+        android:hint="@string/wordConfirm"
+        android:fontFamily="monospace"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+
+    <!--show text "New Hint" -->
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/bannerColor"
+        android:text="@string/yHint"
+        android:fontFamily="monospace"
+        android:layout_marginTop="20dp"
+        android:textStyle="italic"
+        android:layout_marginLeft="5dp"/>
+
+    <!--enter hint section-->
+    <EditText
+        android:id="@+id/hint1"
+        android:layout_height="40dp"
+        android:layout_width="320dp"
+        android:textColor="@color/loginTextColor"
+        android:textCursorDrawable="@color/bannerColor"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/loginTintColor"
+        android:cursorVisible="true"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="monospace"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+
+    <!--confirm-->
+    <EditText
+        android:id="@+id/hint2"
+        android:layout_height="40dp"
+        android:layout_width="320dp"
+        android:textColor="@color/loginTextColor"
+        android:textCursorDrawable="@color/bannerColor"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/loginTintColor"
+        android:cursorVisible="true"
+        android:textColorHint="@color/textHintColor"
+        android:hint="@string/wordConfirm"
+        android:fontFamily="monospace"
+        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+
+    <!--recover button-->
+    <Button
+        android:id="@+id/register"
+        android:background="@color/bannerColor"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="@string/register"
+        android:fontFamily="monospace"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

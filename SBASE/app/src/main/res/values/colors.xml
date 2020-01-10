@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#88ffff</color>
+    <color name="loginTintColor">#001020</color>
+    <color name="loginTextColor">#020202</color>
+    <color name="bannerColor">#88ffff</color>
+    <color name="textHintColor">#101010</color>
+    <color name="navBgColor">#303030</color>
+    <color name="fragBgColor">#202020</color>
+</resources>
