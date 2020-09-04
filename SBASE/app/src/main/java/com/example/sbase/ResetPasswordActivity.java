@@ -63,8 +63,8 @@ View.OnClickListener Recover_Listener=new View.OnClickListener() {
             return;
         }
 
-        if (curr_hint.length() < 8 || curr_hint.length() > 50) {
-            Toast.makeText(getBaseContext(), "current hint length must range from 8 to 50 characters", Toast.LENGTH_LONG).show();
+        if (curr_hint.length() < 8 ) {
+            Toast.makeText(getBaseContext(), "current hint length must be 8 or more characters", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -82,15 +82,15 @@ View.OnClickListener Recover_Listener=new View.OnClickListener() {
 
 
 
-        if(password1.length() < 8 || password1.length() > 25)
+        if(password1.length() < 8 )
         {
-            Toast.makeText(getBaseContext(),"password must range from 8 to 50 characters",Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(),"password must be 8 or more characters",Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(hint1.length() < 8 || hint1.length() > 50)
+        if(hint1.length() < 8 )
         {
-            Toast.makeText(getBaseContext(),"new hint length must range from 8 to 50 characters ",Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(),"new hint length must be 8 or more characters ",Toast.LENGTH_LONG).show();
             return;
         }
 
