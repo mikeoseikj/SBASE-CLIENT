@@ -60,15 +60,15 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
 
-            if(password1.length() < 8 || password2.length() >25)
+            if(password1.length() < 8 )
             {
-                Toast.makeText(getBaseContext(),"password must range from 8 to 25 characters",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(),"password must be 8 or more characters",Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            if(hint1.length() <8 || hint1.length() > 50)
+            if(hint1.length() <8 )
             {
-                Toast.makeText(getBaseContext(),"hint must range from 8 to 50 characters",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(),"hint must be 8 or more characters",Toast.LENGTH_SHORT).show();
                 return;
             }
 
