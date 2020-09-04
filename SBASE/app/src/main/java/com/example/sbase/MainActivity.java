@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             if (username.getText().length() != 12) {
                 Toast.makeText(getBaseContext(), "length of username must be 12", Toast.LENGTH_SHORT).show();
-            } else if ((password.getText().length() < 8) || (password.getText().length() > 16)) {
-                Toast.makeText(getBaseContext(), "length of password must range from 8 to 25 characters", Toast.LENGTH_SHORT).show();
+            } else if ( password.getText().length() < 8 ) {
+                Toast.makeText(getBaseContext(), "length of password must be 8 or more characters", Toast.LENGTH_SHORT).show();
             }
 
 
