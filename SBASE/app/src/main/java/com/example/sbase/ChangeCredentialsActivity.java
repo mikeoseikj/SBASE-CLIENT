@@ -49,9 +49,9 @@ public class ChangeCredentialsActivity extends AppCompatActivity {
             hint1=hint1_input.getText().toString();
             hint2=hint2_input.getText().toString();
 
-            if(current_password.length() <8 || current_password.length() >25)
+            if(current_password.length() <8 )
             {
-                Toast.makeText(getBaseContext(),"current password must range from 8 to 25 characters",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(),"current password must be 8 or more characters",Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -66,14 +66,14 @@ public class ChangeCredentialsActivity extends AppCompatActivity {
                 return;
             }
 
-            if(password1.length() < 8 || password1.length() >25)
+            if(password1.length() < 8 )
             {
-                Toast.makeText(getBaseContext(),"new password must range from 8 to 25 characters",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(),"new password must be 8 or more characters",Toast.LENGTH_SHORT).show();
                 return;
             }
-            if(hint1.length() < 8 || hint1.length() >50)
+            if(hint1.length() < 8 )
             {
-                Toast.makeText(getBaseContext(),"hint must range from 8 to 50 characters",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(),"hint must be 8 or more characters",Toast.LENGTH_SHORT).show();
                 return;
             }
 
