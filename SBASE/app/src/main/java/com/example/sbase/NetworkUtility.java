@@ -22,6 +22,8 @@ public class NetworkUtility {
      * @param context the calling context
      * @param listener the callback to process results
      */
+
+    public static String MY_IP_ADDRESS = "192.168.43.219";
     public static void accessNetworkResource(String url, final Context context, final DataAccessCallbacks listener){
         url = url.replace(" ", "%20");
         Ion.with(context)
@@ -33,10 +35,12 @@ public class NetworkUtility {
                 .setCallback(new FutureCallback<Response<JsonObject>>() {
                     @Override
                     public void onCompleted(Exception e, Response<JsonObject> result) {
-
                         try {
+
                             if (result != null) {
                                 JsonObject json = result.getResult();
+
+
                                 Log.e("LOGIN_RESULT_MESSAGE", result.getHeaders().message());
                                 Log.e("LOGIN_RESULT_CODE", result.getHeaders().code() + "");
 

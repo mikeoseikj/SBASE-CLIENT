@@ -11,89 +11,72 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    String username,current_password;
-    EditText pass1_input,pass2_input,hint1_input,hint2_input;
+    String username, current_password;
+    EditText pass1_input, pass2_input, hint1_input, hint2_input;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Bundle bundle=getIntent().getExtras();
-        username=bundle.getString("username");
-        current_password=bundle.getString("password");
+        Bundle bundle = getIntent().getExtras();
+        username = bundle.getString("username");
+        current_password = bundle.getString("password");
 
-        pass1_input=findViewById(R.id.password1);
-        pass2_input=findViewById(R.id.password2);
-        hint1_input=findViewById(R.id.hint1);
-        hint2_input=findViewById(R.id.hint2);
+        pass1_input = findViewById(R.id.password1);
+        pass2_input = findViewById(R.id.password2);
+        hint1_input = findViewById(R.id.hint1);
+        hint2_input = findViewById(R.id.hint2);
 
-        Button register=findViewById(R.id.register);
+        Button register = findViewById(R.id.register);
         register.setOnClickListener(Register_Listener);
     }
 
-    View.OnClickListener Register_Listener=new View.OnClickListener()
-    {
+    View.OnClickListener Register_Listener=new View.OnClickListener() {
 
         String url_string;
 
         @Override
-        public void onClick(View v)
-        {
-            String password1,password2,hint1,hint2;
+        public void onClick(View v) {
+            String password1, password2, hint1, hint2;
 
-            password1=pass1_input.getText().toString();
-            password2=pass2_input.getText().toString();
-            hint1=hint1_input.getText().toString();
-            hint2=hint2_input.getText().toString();
+            password1 = pass1_input.getText().toString();
+            password2 = pass2_input.getText().toString();
+            hint1 = hint1_input.getText().toString();
+            hint2 = hint2_input.getText().toString();
 
-
-            if(password1.compareTo(password2) !=0)
-            {
-                Toast.makeText(getBaseContext(),"passwords are not the same",Toast.LENGTH_SHORT).show();
+            if(password1.compareTo(password2) != 0) {
+                Toast.makeText(getBaseContext(),"passwords are not the same", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            if(hint1.compareTo(hint2) != 0)
-            {
-                Toast.makeText(getBaseContext(),"hints are not the same",Toast.LENGTH_SHORT).show();
+            if(hint1.compareTo(hint2) != 0) {
+                Toast.makeText(getBaseContext(),"hints are not the same", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            if(password1.length() < 8 )
-            {
-                Toast.makeText(getBaseContext(),"password must be 8 or more characters",Toast.LENGTH_SHORT).show();
+            if(password1.length() < 8) {
+                Toast.makeText(getBaseContext(),"password must be 8 or more characters", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            if(hint1.length() <8 )
-            {
-                Toast.makeText(getBaseContext(),"hint must be 8 or more characters",Toast.LENGTH_SHORT).show();
+            if(hint1.length() < 8) {
+                Toast.makeText(getBaseContext(),"hint must be 8 or more characters", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-
 
             //sending url to set desired and 'permanent' password and hint
-            url_string="http://192.168.43.127/android/android_flogin.php?username="+username+"&current_password="+current_password+"&password1="+password1+"&password2="+password2+"&hint1="+hint1+"&hint2="+hint2;
+            url_string = "http://" + NetworkUtility.MY_IP_ADDRESS + "/android/android_flogin.php?username=" + username + "&current_password=" + current_password + "&password1=" + password1 + "&password2=" + password2 + "&hint1=" + hint1 + "&hint2=" + hint2;
 
             new Thread()
             {
                 public void run() {
 
-                    try
-                    {
+                    try {
                         NetworkUtility.accessNetworkResource(url_string, RegisterActivity.this, null);
                         startActivity(new Intent(getBaseContext(),MainActivity.class));
                         RegisterActivity.this.finish();
-                    }
-                    catch (Exception e)
-                    {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }}.start();
-
-
         }
     };
 }

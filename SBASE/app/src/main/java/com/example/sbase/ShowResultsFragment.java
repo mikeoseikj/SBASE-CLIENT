@@ -26,13 +26,12 @@ public class ShowResultsFragment extends Fragment {
 
         TableRow.LayoutParams t_params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 0.25f);
 
-        String json_data,subject;
-        double class_score, exam_score, total_score,total_marks=0;
-        int class_position=0,form_position=0;
-        String form="";
+        String json_data, subject;
+        double class_score, exam_score, total_score,total_marks = 0;
+        int class_position = 0, form_position = 0;
+        String form = "";
+
         json_data = getArguments().getString("json_data");
-
-
 
         try {
             //getting the 'default json data' received from server
@@ -43,36 +42,34 @@ public class ShowResultsFragment extends Fragment {
             class_position = default_info.getInt("class_position");
             form_position = default_info.getInt("form_position");
             total_marks = default_info.getDouble("marks");
-        }catch (Exception e)
-        {
+        }catch (Exception e) {
             e.printStackTrace();
         }
 
-
         /*
-        THIS ROW IS USED FOR SHOWING DEFAULT INFO LIKE FORM AND POSITIONS
+            THIS ROW IS USED FOR SHOWING DEFAULT INFO LIKE FORM AND POSITIONS
          */
-        TextView s_form=new TextView(getActivity());
+        TextView s_form = new TextView(getActivity());
         s_form.setTextAppearance(getActivity(),R.style.defInfoAppearance);
-        s_form.setText("form: "+form);
+        s_form.setText("form: " + form);
         s_form.setLayoutParams(t_params);
 
 
-        TableRow d_info=new TableRow(getActivity());
+        TableRow d_info = new TableRow(getActivity());
         d_info.setBackgroundResource(android.R.color.holo_blue_bright);
         d_info.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
 
-        TextView c_pos=new TextView(getActivity());
+        TextView c_pos = new TextView(getActivity());
         c_pos.setTextAppearance(getActivity(),R.style.defInfoAppearance);
         c_pos.setText("class rank: " + class_position);
         c_pos.setLayoutParams(t_params);
 
-        TextView f_pos=new TextView(getActivity());
+        TextView f_pos = new TextView(getActivity());
         f_pos.setTextAppearance(getActivity(),R.style.defInfoAppearance);
         f_pos.setText("form rank: " + form_position );
         f_pos.setLayoutParams(t_params);
 
-        TextView t_marks=new TextView(getActivity());
+        TextView t_marks = new TextView(getActivity());
         t_marks.setTextAppearance(getActivity(),R.style.defInfoAppearance);
         t_marks.setText("Total: " + total_marks );
         t_marks.setLayoutParams(t_params);
@@ -82,41 +79,39 @@ public class ShowResultsFragment extends Fragment {
         d_info.addView(f_pos);
         d_info.addView(t_marks);
 
-
-
         TableLayout table = view.findViewById(R.id.table);
         ShapeDrawable border = new ShapeDrawable(new RectShape());
         border.getPaint().setStyle(Paint.Style.STROKE);
         border.getPaint().setColor(getResources().getColor(R.color.bannerColor));
 
         /*
-        table headings for the results table with (4 cells)
+            table headings for the results table with (4 cells)
          */
 
-        TableRow th_row=new TableRow(getActivity());
+        TableRow th_row = new TableRow(getActivity());
         th_row.setBackgroundResource(R.color.bannerColor);
         th_row.setWeightSum((float) 1.0);
         th_row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
-        TextView th=new TextView(getActivity());
+        TextView th = new TextView(getActivity());
         th.setText(R.string.hdr);
         th.setTextAppearance(getActivity(),R.style.tableHdrAppearance);
         th.setLayoutParams(t_params);
         th_row.addView(th);
 
-        TextView th1=new TextView(getActivity());
+        TextView th1 = new TextView(getActivity());
         th1.setText(R.string.hdr1);
         th1.setTextAppearance(getActivity(),R.style.tableHdrAppearance);
         th1.setLayoutParams(t_params);
         th_row.addView(th1);
 
-        TextView th2=new TextView(getActivity());
+        TextView th2 = new TextView(getActivity());
         th2.setText(R.string.hdr2);
         th2.setTextAppearance(getActivity(),R.style.tableHdrAppearance);
         th2.setLayoutParams(t_params);
         th_row.addView(th2);
 
-        TextView th3=new TextView(getActivity());
+        TextView th3 = new TextView(getActivity());
         th3.setText(R.string.hdr3);
         th3.setTextAppearance(getActivity(),R.style.tableHdrAppearance);
         th3.setLayoutParams(t_params);
@@ -125,13 +120,10 @@ public class ShowResultsFragment extends Fragment {
         table.addView(d_info, new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         table.addView(th_row, new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
-
-
         try {
 
             JSONObject obj = new JSONObject(json_data);
             JSONArray arr = obj.getJSONArray("results");
-
 
 
             int id = 0;
@@ -142,7 +134,6 @@ public class ShowResultsFragment extends Fragment {
                 class_score = results.getDouble("classmarks");
                 exam_score = results.getDouble("exammarks");
                 total_score = results.getDouble("totalmarks");
-
 
 
                 TableRow tr = new TableRow(getActivity());
@@ -187,16 +178,12 @@ public class ShowResultsFragment extends Fragment {
 
                 id += 4;
             }
-           }catch(Exception e)
-            {
-
+           }catch(Exception e){
                 e.printStackTrace();
-            }
-
+        }
 
         return view;
 
         }
-
 
     }

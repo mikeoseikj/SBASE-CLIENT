@@ -18,11 +18,9 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 
 
-public class GetResultsActivity extends AppCompatActivity{
+public class GetResultsActivity extends AppCompatActivity {
 
-
-    void getLatestResultsAfterLogin(final String url_string)
-    {
+    void getLatestResultsAfterLogin(final String url_string) {
 
         new Thread()
         {
@@ -32,19 +30,18 @@ public class GetResultsActivity extends AppCompatActivity{
                     NetworkUtility.accessNetworkResource(url_string, GetResultsActivity.this, new DataAccessCallbacks() {
                         @Override
                         public void onDataRequestCompleted(int request_code, Object[] results) {
-                            if(results!=null){
+                            if(results != null){
                                 String target;
 
                                 String[] result_string = (String[]) results;
                                 target = result_string[0];
-                                Bundle bundle=new Bundle();
-                                bundle.putString("json_data",target);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("json_data", target);
 
-
-                                Fragment fragment=new ShowResultsFragment();
+                                Fragment fragment = new ShowResultsFragment();
                                 fragment.setArguments(bundle);
 
-                                FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+                                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                                 transaction.replace(R.id.content_frame,fragment);
                                 transaction.commit();
 
@@ -52,12 +49,10 @@ public class GetResultsActivity extends AppCompatActivity{
 
                         }
                     });
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }}.start();
-
 
     }
 
@@ -81,21 +76,21 @@ public class GetResultsActivity extends AppCompatActivity{
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //getting name and list of exams passed to this activity
-        Bundle data=getIntent().getExtras();
+        Bundle data = getIntent().getExtras();
 
-        String name=data.getString("name");
-        username=data.getString("username");
-        password=data.getString("password");
+        String name = data.getString("name");
+        username = data.getString("username");
+        password = data.getString("password");
 
-        ArrayList<String> Exams=data.getStringArrayList("exams");
+        ArrayList<String> Exams = data.getStringArrayList("exams");
 
-        drawer_layout=findViewById(R.id.drawer_layout);
-        NavigationView nav_view=findViewById(R.id.navigation);
+        drawer_layout = findViewById(R.id.drawer_layout);
+        NavigationView nav_view = findViewById(R.id.navigation);
         nav_view.setNavigationItemSelectedListener(Nav_Listener);
 
 
         //creating the action bar
-        Toolbar toolbar=findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_action_menu);
         setSupportActionBar(toolbar);
@@ -103,15 +98,14 @@ public class GetResultsActivity extends AppCompatActivity{
 
 
 
-        Menu menu=nav_view.getMenu();
+        Menu menu = nav_view.getMenu();
         //display students name
-        name=name.toUpperCase();
+        name = name.toUpperCase();
         menu.add(0,1,0,name);
 
-        size=Exams.size();
-        for(int i=0;i<size;i++)
-        {
-            String exam=Exams.get(i);
+        size = Exams.size();
+        for(int i = 0; i < size; i++) {
+            String exam = Exams.get(i);
             menu.add(1,i+2,0,exam);
         }
         menu.add(2,size+2,0,"Graph").setIcon(R.drawable.ic_menu_show_chart);
@@ -120,28 +114,24 @@ public class GetResultsActivity extends AppCompatActivity{
 
 
         //get results latest results for server with with a unique exam value 'unique_id_di_euqinu'
-        String url_string="http://192.168.43.127/android/android_results.php?username="+username+"&password="+password+"&exam=unique_id_di_euqinu";
+        String url_string = "http://" + NetworkUtility.MY_IP_ADDRESS + "/android/android_results.php?username=" + username + "&password=" + password + "&exam=unique_id_di_euqinu";
         getLatestResultsAfterLogin(url_string);
-
-
 
     }
 
-    NavigationView.OnNavigationItemSelectedListener Nav_Listener=new NavigationView.OnNavigationItemSelectedListener() {
+    NavigationView.OnNavigationItemSelectedListener Nav_Listener = new NavigationView.OnNavigationItemSelectedListener() {
         String target,url_string;
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            int id=menuItem.getItemId();
+            int id = menuItem.getItemId();
 
-            if((id < size+2) && (id >1)) //id is that of an exam
-            {
+            if((id < size+2) && (id > 1)) {     //id is that of an exam
 
-                String exam=menuItem.getTitle().toString();
-                url_string="http://192.168.43.127/android/android_results.php?username="+username+"&password="+password+"&exam="+exam;
+                String exam = menuItem.getTitle().toString();
+                url_string = "http://" + NetworkUtility.MY_IP_ADDRESS + "/android/android_results.php?username=" + username + "&password=" + password + "&exam=" + exam;
 
                 drawer_layout.closeDrawers();
-
 
                 new Thread()
                 {
@@ -151,17 +141,16 @@ public class GetResultsActivity extends AppCompatActivity{
                             NetworkUtility.accessNetworkResource(url_string, GetResultsActivity.this, new DataAccessCallbacks() {
                                 @Override
                                 public void onDataRequestCompleted(int request_code, Object[] results) {
-                                    if(results!=null){
+                                    if(results != null){
                                         String[] result_string = (String[]) results;
                                         target = result_string[0];
-                                        Bundle bundle=new Bundle();
-                                        bundle.putString("json_data",target);
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString("json_data", target);
 
-
-                                        Fragment fragment=new ShowResultsFragment();
+                                        Fragment fragment = new ShowResultsFragment();
                                         fragment.setArguments(bundle);
 
-                                        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+                                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                                         transaction.replace(R.id.content_frame,fragment);
                                         transaction.commit();
 
@@ -169,8 +158,7 @@ public class GetResultsActivity extends AppCompatActivity{
 
                                 }
                             });
-                        }
-                        catch (Exception e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }}.start();
@@ -181,9 +169,8 @@ public class GetResultsActivity extends AppCompatActivity{
 
 
             //if id is that of graph
-            if(id==size+2)
-            {
-                url_string="http://192.168.43.127/android/android_graph.php?username="+username+"&password="+password;
+            if(id == size+2) {
+                url_string = "http://" + NetworkUtility.MY_IP_ADDRESS + "/android/android_graph.php?username=" + username + "&password=" + password;
 
                 drawer_layout.closeDrawers();
 
@@ -195,14 +182,14 @@ public class GetResultsActivity extends AppCompatActivity{
                             NetworkUtility.accessNetworkResource(url_string, GetResultsActivity.this, new DataAccessCallbacks() {
                                 @Override
                                 public void onDataRequestCompleted(int request_code, Object[] results) {
-                                    if(results!=null){
+                                    if(results != null){
                                         String[] result_string = (String[]) results;
                                         target = result_string[0];
-                                        Bundle bundle=new Bundle();
+                                        Bundle bundle = new Bundle();
                                         bundle.putString("json_data",target);
 
 
-                                        Fragment fragment=new ShowGraphFragment();
+                                        Fragment fragment = new ShowGraphFragment();
                                         fragment.setArguments(bundle);
 
                                         FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
@@ -213,8 +200,7 @@ public class GetResultsActivity extends AppCompatActivity{
 
                                 }
                             });
-                        }
-                        catch (Exception e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }}.start();
@@ -222,29 +208,24 @@ public class GetResultsActivity extends AppCompatActivity{
                 return true;
             }
 
-
-            if(id==size+3)
-            {
+            if(id == size+3) {
                 //open the change password activity
                 drawer_layout.closeDrawers();
-                Intent intent=new Intent(getBaseContext(),ChangeCredentialsActivity.class);
-                Bundle bundle=new Bundle();
+                Intent intent = new Intent(getBaseContext(),ChangeCredentialsActivity.class);
+                Bundle bundle = new Bundle();
                 bundle.putString("username",username);
 
                 intent.putExtras(bundle);
                 startActivity(intent);
                 return true;
             }
-
-            if(id==size+4)
-            {
+            if(id == size+4) {
                 //close by loading Main Activity
                 drawer_layout.closeDrawers();
                 startActivity(new Intent(getBaseContext(),MainActivity.class));
                 GetResultsActivity.this.finish();
                 return true;
             }
-
 
             return false;
         }
