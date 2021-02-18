@@ -21,7 +21,7 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_reset);
 
     username_input = findViewById(R.id.username);
-    chint_input = findViewById(R.id.cur_hint);
+    chint_input = findViewById(R.id.curr_hint);
     pass1_input = findViewById(R.id.password1);
     pass2_input = findViewById(R.id.password2);
     hint1_input = findViewById(R.id.hint1);

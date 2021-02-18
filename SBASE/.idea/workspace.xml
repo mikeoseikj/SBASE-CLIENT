@@ -18,6 +18,13 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1mZpx8kh7CyqypykMHs5fukDoN2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,6 +33,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Build Variants" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="BUILD_VARIANTS_TAB" value="Flavors" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -107,6 +121,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="239" y="132" width="950" height="537" key="#PSD" timestamp="1613568671886">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="239" y="132" width="950" height="537" key="#PSD/72.27.1294.741@72.27.1294.741" timestamp="1613568671886" />
+    <state x="423" y="178" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613561197166">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="423" y="178" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1294.741@72.27.1294.741" timestamp="1613561197166" />
+    <state x="376" y="199" width="824" height="491" key="AndroidCreateResourceDirectoryDialog" timestamp="1613559953795">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="376" y="199" width="824" height="491" key="AndroidCreateResourceDirectoryDialog/72.27.1294.741@72.27.1294.741" timestamp="1613559953795" />
+    <state x="167" y="27" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1613547658909">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="167" y="27" width="824" height="491" key="AndroidCreateResourceFileDialog/72.27.1294.741@72.27.1294.741" timestamp="1613547658909" />
+    <state x="262" y="302" width="1094" height="541" key="dock-window-1" timestamp="1613542445944">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="262" y="302" width="1094" height="541" key="dock-window-1/72.27.1294.741@72.27.1294.741" timestamp="1613542445944" />
     <state x="383" y="174" key="run.anything.popup" timestamp="1609760921935">
       <screen x="72" y="27" width="1294" height="741" />
     </state>

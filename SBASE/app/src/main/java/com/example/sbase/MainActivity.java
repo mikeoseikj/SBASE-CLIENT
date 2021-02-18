@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
     EditText username, password;
     Button login_btn, reset_btn;
 

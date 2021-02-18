@@ -27,7 +27,7 @@ public class ChangeCredentialsActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         username = bundle.getString("username");
 
-        curr_pass_input = findViewById(R.id.cur_password);
+        curr_pass_input = findViewById(R.id.curr_pass);
         pass1_input = findViewById(R.id.password1);
         pass2_input = findViewById(R.id.password2);
         hint1_input = findViewById(R.id.hint1);

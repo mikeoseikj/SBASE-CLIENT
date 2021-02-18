@@ -9,4 +9,5 @@
     <color name="textHintColor">#101010</color>
     <color name="navBgColor">#303030</color>
     <color name="fragBgColor">#202020</color>
+    <color name="bgColor">#5fb0c9</color>
 </resources>

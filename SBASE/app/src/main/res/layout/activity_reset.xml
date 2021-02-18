@@ -1,152 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background_image">
+    android:background="@color/bgColor"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
 
-    <!--Banner-->
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="@string/resetBanner"
-        android:textSize="23dp"
-        android:textColor="@color/bannerColor"
-        android:textAlignment="center"
-        android:textAllCaps="true"/>
+        android:layout_below="@+id/login_title"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="70dp"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <!--show the word "username:" above the input field in the Current Account section-->
-    <TextView
-        android:text="@string/fieldUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:layout_marginLeft="5dp"
-        android:textStyle="italic"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
 
-    <!--provide username-->
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/loginTintColor"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center_horizontal"
-        android:textCursorDrawable="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ." />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <!--provide current hint-->
-    <EditText
-        android:id="@+id/cur_hint"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:hint="@string/wordCurHint"
-        android:backgroundTint="@color/loginTintColor"
-        android:textColorHint="@color/loginTextColor"
-        android:fontFamily="monospace"
-        android:textColor="@color/loginTextColor"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center_horizontal"
-        android:textCursorDrawable="@color/bannerColor"
-        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+                <EditText
+                    android:id="@+id/username"
+                    android:fontFamily="monospace"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person"
+                    android:drawableTint="@android:color/background_dark"
+                    android:singleLine="true"
+                    android:hint="@string/user"
+                    android:textSize = "14sp"
+                    android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ." />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Beginning of New Account Details section //show text "New Password"-->
-    <TextView
-        android:text="@string/fieldPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:layout_marginLeft="5dp"
-        android:textStyle="italic"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <!--enter password section-->
-    <EditText
-        android:id="@+id/password1"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/loginTintColor"
-        android:textColor="@color/loginTextColor"
-        android:inputType="textPassword"
-        android:layout_gravity="center_horizontal"
-        android:cursorVisible="true"
-        android:textCursorDrawable="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:layout_marginBottom="20dp"
-        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+                <EditText
+                    android:id="@+id/curr_hint"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:singleLine="true"
+                    android:hint="@string/wordCurHint"
+                    android:fontFamily="monospace"
+                    android:textSize = "14sp"
+                    android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <!--confirm-->
-    <EditText
-        android:id="@+id/password2"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:hint="@string/wordConfirm"
-        android:backgroundTint="@color/loginTintColor"
-        android:textColorHint="@color/textHintColor"
-        android:textColor="@color/loginTextColor"
-        android:inputType="textPassword"
-        android:layout_gravity="center_horizontal"
-        android:cursorVisible="true"
-        android:textCursorDrawable="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+            <!-- new password input fields -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
 
-    <!--show text "New Hint" -->
-    <TextView
-        android:text="@string/fieldHint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="5dp"
-        android:textStyle="italic"/>
 
-    <!--enter hint section-->
-    <EditText
-        android:id="@+id/hint1"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/loginTintColor"
-        android:textColor="@color/loginTextColor"
-        android:layout_gravity="center_horizontal"
-        android:cursorVisible="true"
-        android:textCursorDrawable="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:layout_marginBottom="20dp"
-        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
 
-    <!--confirm-->
-    <EditText
-        android:id="@+id/hint2"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:hint="@string/wordConfirm"
-        android:backgroundTint="@color/loginTintColor"
-        android:textColorHint="@color/textHintColor"
-        android:textColor="@color/loginTextColor"
-        android:layout_gravity="center_horizontal"
-        android:cursorVisible="true"
-        android:textCursorDrawable="@color/bannerColor"
-        android:fontFamily="monospace"
-        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+                    <EditText
+                        android:id="@+id/password1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:singleLine="true"
+                        android:drawableLeft="@drawable/ic_lock"
+                        android:drawableTint="@android:color/background_dark"
+                        android:hint="@string/wordPasswordHint"
+                        android:fontFamily="monospace"
+                        android:inputType="textPassword"
+                        android:textSize = "14sp"
+                        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
 
-    <!--recover button-->
-    <Button
-        android:id="@+id/recover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@color/bannerColor"
-        android:text="@string/recover"
-        android:textColor="@android:color/white"
-        android:fontFamily="monospace"
-        android:layout_gravity="right"/>
-</LinearLayout>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/password2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:singleLine="true"
+                        android:hint="@string/wordConfirm"
+                        android:fontFamily="monospace"
+                        android:inputType="textPassword"
+                        android:textSize = "14sp"
+                        android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- new hints -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/hint1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:singleLine="true"
+                    android:hint="@string/wordNewHint"
+                    android:fontFamily="monospace"
+                    android:textSize = "14sp"
+                    android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/hint2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:singleLine="true"
+                    android:hint="@string/wordConfirm"
+                    android:fontFamily="monospace"
+                    android:textSize = "14sp"
+                    android:digits="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/recover"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:background="@android:color/holo_blue_dark"
+                android:text="@string/reset"
+                android:fontFamily="monospace"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

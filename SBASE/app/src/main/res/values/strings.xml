@@ -2,30 +2,28 @@
 <resources>
     //for main activity
     <string name="app_name">SBASE</string>
-    <string name="loginBanner">Account Login</string>
-    <string name="login">Login</string>
-    <string name="reset">Forgot Password</string>
-    <string name="usernameHint">username</string>
-    <string name="passwordHint">password</string>
-    //for reset activity
-    <string name="resetBanner">Account Recovery</string>
-    <string name="fieldUsername">Username:</string>
-    <string name="fieldHint">New Hint:</string>
-    <string name="fieldPassword">New Password:</string>
-    <string name="wordConfirm">confirm</string>
-    <string name="wordCurHint">Enter current hint</string>
-    <string name="wordPassword">password</string>
-    <string name="recover">reset</string>
-    //for changecred activity
-    <string name="changeBanner">Change Security Credentials</string>
-    <string name="fieldCurPass">current password:</string>
-    <string name="change">proceed</string>
-    //for register activity
-    <string name="regBanner">Set Personal Credentials</string>
-    <string name="register">register</string>
-    <string name="yPass">Account Password:</string>
-    <string name="yHint">Account Hint:</string>
+    <string name="loginBanner">ACCOUNT LOGIN</string>
+    <string name="signin">Sign In</string>
+    <string name="recover">Forgot Password</string>
 
+    <string name="user">User Name</string>
+    <string name="pass">Password</string>
+
+    //for reset activity
+    <string name="resetBanner">ACCOUNT RECOVERY</string>
+    <string name="fieldUsername">Username:</string>
+    <string name="wordPasswordHint">New Password</string>
+    <string name="wordCurHint">Current Hint</string>
+    <string name="wordNewHint">New Hint</string>
+    <string name="reset">Reset</string>
+
+    //for changecred activity
+    <string name="changeBanner">CHANGE PASSWORD</string>
+    <string name="change">proceed</string>
+
+    //for register activity
+    <string name="regBanner">SET ACCOUNT CREDENTIALS</string>
+    <string name="register">register</string>
 
     <!-- for the show results fragment-->
     <string name="hdr">Subject</string>
@@ -40,5 +38,8 @@
     <string name="openDrawer">open</string>
     <string name="closeDrawer">close</string>
 
+
+    <string name="fieldPassword">Password</string>
+    <string name="wordConfirm">confirm</string>
 
 </resources>

@@ -959,6 +959,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color bannerColor
+color bgColor
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1584,6 +1585,7 @@ drawable design_snackbar_background
 drawable ic_action_menu
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_lock
 drawable ic_menu_close
 drawable ic_menu_security
 drawable ic_menu_show_chart
@@ -1591,6 +1593,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_person
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1692,7 +1695,6 @@ id actions
 id activity_chooser_view_content
 id add
 id alertTitle
-id align
 id aligned
 id all
 id always
@@ -1740,8 +1742,8 @@ id contentPanel
 id content_frame
 id coordinator
 id cos
-id cur_hint
-id cur_password
+id curr_hint
+id curr_pass
 id custom
 id customPanel
 id cut
@@ -1828,6 +1830,7 @@ id linear
 id listMode
 id list_item
 id login
+id login_title
 id masked
 id message
 id middle
@@ -2201,8 +2204,6 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string fieldCurPass
-string fieldHint
 string fieldPassword
 string fieldUsername
 string graphBanner
@@ -2213,7 +2214,6 @@ string hdr3
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
-string login
 string loginBanner
 string material_slider_range_end
 string material_slider_range_start
@@ -2255,7 +2255,7 @@ string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string openDrawer
-string passwordHint
+string pass
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2267,13 +2267,13 @@ string register
 string reset
 string resetBanner
 string search_menu_title
+string signin
 string status_bar_notification_info_overflow
-string usernameHint
+string user
 string wordConfirm
 string wordCurHint
-string wordPassword
-string yHint
-string yPass
+string wordNewHint
+string wordPasswordHint
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
